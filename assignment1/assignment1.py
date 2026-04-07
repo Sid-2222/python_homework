@@ -7,7 +7,7 @@ print(hello())
 
 # Task 2
 def greet(input):
-    return "hello, " + input + "!"
+    return "Hello, " + input + "!"
 print(greet("momo"))
 
 
@@ -31,9 +31,9 @@ def calc(input1, input2, operation="multiply"):
         else:
             return "invalid operation"
     except ZeroDivisionError:
-        print("You can't divide by 0!")
+        return("You can't divide by 0!")
     except TypeError:
-       print("You can't multiply those values!")
+       return("You can't multiply those values!")
 
 
 print(calc(10, 4, "divide"))
@@ -51,7 +51,7 @@ def data_type_conversion(value, data_type):
         else:
             return (f"Invalid Data type {data_type}")
     except(TypeError,ValueError):
-        return (f"You can't convert {value} into a {data_type}")
+        return (f"You can't convert {value} into a {data_type}.")
 
 print(data_type_conversion("77","float"))
 
@@ -135,7 +135,7 @@ print(titleize("the hollow chocolate bunnies of the apocalypse"))
 
 # Task 9
 
-def Hangman(secret , guess):
+def hangman(secret , guess):
     result_string = ""
     for i in secret:
        if i in guess:
@@ -144,7 +144,7 @@ def Hangman(secret , guess):
            result_string = result_string+ "_"
     return result_string
 
-print(Hangman("Califonia" , "lio"))
+print(hangman("Califonia" , "lio"))
 
 #task 10
 

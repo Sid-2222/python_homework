@@ -1,7 +1,7 @@
 # Write your code here.
 # Task 1
 def hello():
-    return "hello"
+    return "Hello!"
 print(hello())
 
 

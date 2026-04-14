@@ -169,5 +169,4 @@ def pig_latin(input):
     final_output = " ".join(final_result)
     return final_output
 
-print(pig_latin("hello momo queen ttal"))               
-    
+print(pig_latin("hello momo queen ttal"))

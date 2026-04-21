@@ -1,0 +1,37 @@
+
+
+function: add
+positional parameters: [3, 4]
+keyword parameters: none
+return: 7
+
+function: greet
+positional parameters: ['momo']
+keyword parameters: none
+return: Hello, momo!
+
+function: greet
+positional parameters: none
+keyword parameters: none
+return: Hello, World!
+
+function: hello
+positional parameters: none
+keyword parameters: none
+return: None
+
+function: check_true
+positional parameters: [1, 2]
+keyword parameters: none
+return: True
+
+function: decorator
+positional parameters: none
+keyword parameters: {'a': 1, 'b': 2}
+return: <function logger_decorator at 0x0000029D65F23F60>
+
+function: hello
+positional parameters: none
+keyword parameters: none
+return: None
+

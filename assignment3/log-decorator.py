@@ -60,8 +60,8 @@ def decorator(**kwargs):
 
 #Task 1.6
 
-# if __name__ == "__main__":  
-#     check_true(1,2)
-#     decorator(a=1,b=2)
-#     hello()      
+ if __name__ == "__main__":  
+     check_true(1,2)
+     decorator(a=1,b=2)
+     hello()      
 

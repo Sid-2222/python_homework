@@ -1,0 +1,4 @@
+The challenges I faced in completing the assignments are several, like locating the class or finding the section in inspect mode,
+ which can be a bit tricky, and using different debugger tools is also helpful to overcome those challenges. 
+ Also, extracting the data correctly can be tricky. Developers need to keep the ID or the class name, 
+ or the correct way to locate and fetch the data properly. And also need to keep the timeout in mind so the dynamic data can load properly.

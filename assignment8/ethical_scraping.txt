@@ -1,0 +1,34 @@
+Q:Which sections of the website are restricted for crawling?
+
+A:After analyzing the Wikipedia Robots.txt we see that some restricted sections are there for crawling, like Api, trap sections
+Disallow: /api/
+Disallow: /trap/
+
+Q:Are there specific rules for certain user agents?
+
+A:Yes, there are many rules for certain user agents, like
+
+Some of the agents below are restricted
+
+User-agent: UbiCrawler
+Disallow: /
+
+User-agent: DOC
+Disallow: /
+
+User-agent: Zao
+Disallow: /
+
+Some of the agents below are not restricted
+
+User-agent: IsraBot
+Disallow:
+
+User-agent: Orthogaffe
+Disallow:
+
+
+3.Websites use robots.txt to give developers rules of what is allowed and what is not. Which part is restricted, and what is not!  It helps the website protect sensitive information from crawlers. It also limits the traffic flow and ensures that it doesn’t affect normal website operations or slow them down.
+By following robots.txt  rules, developers practice ethical scraping by respecting a website’s policies and privacy concerns.
+
+   

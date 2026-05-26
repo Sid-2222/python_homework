@@ -87,10 +87,10 @@ clean_data["Salary"] = clean_data["Salary"].fillna(median_salary)
 #Task 4.6
 
 clean_data["Hire Date"] = pd.to_datetime(clean_data["Hire Date"], errors="coerce", format="mixed")
-print(clean_data)
+#print(clean_data)
 
 #Task 4.7
 clean_data["Name"] = clean_data["Name"].str.strip().str.upper()
 clean_data["Department"] = clean_data["Department"].str.strip().str.upper()
 
-print(clean_data)
+#print(clean_data)

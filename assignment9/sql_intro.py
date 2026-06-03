@@ -74,24 +74,24 @@ try:
         
         # DEFINATIONS CREATED
         
-        # add_publisher(cursor,"Nat Geo")  
-        # add_publisher(cursor,"BBC") 
-        # add_publisher(cursor,"Momo B") 
+        add_publisher(cursor,"Nat Geo")  
+        add_publisher(cursor,"BBC") 
+        add_publisher(cursor,"Momo B") 
         
-        # add_magazine(cursor,"Wild Journey","Nat Geo")
-        # add_magazine(cursor,"World Today", "BBC")
-        # add_magazine(cursor,"Food for Life", "Momo B")
+        add_magazine(cursor,"Wild Journey","Nat Geo")
+        add_magazine(cursor,"World Today", "BBC")
+        add_magazine(cursor,"Food for Life", "Momo B")
         
-        # add_subscriber(cursor,"John Hammer","232 Div ave CA")
-        # add_subscriber(cursor,"Dosa Ross","909 Tele Rd CA")
-        # add_subscriber(cursor,"Momo Wiggly","552 Dog Park CA")
+        add_subscriber(cursor,"John Hammer","232 Div ave CA")
+        add_subscriber(cursor,"Dosa Ross","909 Tele Rd CA")
+        add_subscriber(cursor,"Momo Wiggly","552 Dog Park CA")
         
         
-        # add_subscription(cursor,"John Hammer","World Today","2027-01-01")
-        # add_subscription(cursor,"Dosa Ross","World Today","2027-01-01")
-        # add_subscription(cursor,"Dosa Ross","Food for Life","2027-06-01")
-        # add_subscription(cursor,"Momo Wiggly","Food for Life","2027-01-01")
-        # add_subscription(cursor,"Momo Wiggly","Wild Journey","2027-06-01")    
+        add_subscription(cursor,"John Hammer","World Today","2027-01-01")
+        add_subscription(cursor,"Dosa Ross","World Today","2027-01-01")
+        add_subscription(cursor,"Dosa Ross","Food for Life","2027-06-01")
+        add_subscription(cursor,"Momo Wiggly","Food for Life","2027-01-01")
+        add_subscription(cursor,"Momo Wiggly","Wild Journey","2027-06-01")    
                    
     
         conn.commit()

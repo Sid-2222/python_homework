@@ -8,17 +8,18 @@ try:
         
         cursor.execute("""
                        CREATE TABLE IF NOT EXISTS publishers(
-                          name TEXT PRIMARY KEY NOT NULL 
+                          id INTEGER PRIMARY KEY AUTOINCREMENT,
+                          name TEXT UNIQUE NOT NULL 
                        )
                        """);
         
         cursor.execute("""
                        CREATE TABLE IF NOT EXISTS magazines(
                           name TEXT PRIMARY KEY NOT NULL,
-                          publisher_name TEXT NOT NULL,
+                          publisher_id INTEGER NOT NULL,
                           
-                          FOREIGN KEY(publisher_name)
-                          REFERENCES publishers(name)                          
+                          FOREIGN KEY(publisher_id)
+                          REFERENCES publishers(id)                          
                        )
                        """);
         
@@ -45,16 +46,24 @@ try:
         # TABLES CREATED 
         
         def add_publisher(cursor, name):
-            cursor.execute("SELECT name FROM publishers WHERE name = ?", (name,)) 
+            cursor.execute("SELECT id FROM publishers WHERE name = ?", (name,)) 
             if cursor.fetchone() is None:
                 cursor.execute("INSERT INTO publishers(name) VALUES (?)" , (name,))
             else:
                 print(f"Publisher '{name}' already exists.")
                 
         def add_magazine(cursor,name,publisher_name):
+            cursor.execute("SELECT id FROM publishers WHERE name = ?", (publisher_name,))
+            publisher = cursor.fetchone()
+            if publisher is None:
+                print(f"Publisher '{publisher_name}' does not exist.")
+                return
+            publisher_id = publisher[0]
             cursor.execute("SELECT name FROM magazines WHERE name = ?", (name,))
             if cursor.fetchone() is None:
-                cursor.execute("INSERT INTO magazines(name, publisher_name) VALUES (?,?)" , (name,publisher_name))
+                cursor.execute(
+                        "INSERT INTO magazines(name, publisher_id) VALUES (?, ?)",
+                         (name, publisher_id))
             else:
                 print(f"Magazine '{name}' already exists.")
                 
@@ -77,6 +86,7 @@ try:
         add_publisher(cursor,"Nat Geo")  
         add_publisher(cursor,"BBC") 
         add_publisher(cursor,"Momo B") 
+        add_publisher(cursor,"Huskey Woo")
         
         add_magazine(cursor,"Wild Journey","Nat Geo")
         add_magazine(cursor,"World Today", "BBC")
@@ -108,11 +118,11 @@ try:
             print(row)
             
         cursor.execute("""
-                       SELECT magazines.name 
-                       FROM magazines 
-                       JOIN publishers
-                       ON magazines.publisher_name = publishers.name
-                       WHERE magazines.publisher_name = 'Momo B'
+                       SELECT magazines.name
+                        FROM magazines
+                        JOIN publishers
+                        ON magazines.publisher_id = publishers.id
+                        WHERE publishers.name = 'Momo B'
                        """)
         result = cursor.fetchall()
         for row in result:
